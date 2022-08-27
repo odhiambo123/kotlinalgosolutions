@@ -14,7 +14,7 @@ fun twoSum(nums:IntArray, target:Int):IntArray {
 }
 
     //Given a string implement a function which returns true if string contains at least one repeated character, otherwise it returns false.
-
+    //https://gist.github.com/64b49f16375c377229e09f89f1ba6185
     fun isUnique(str: String): Boolean {
         val set = mutableSetOf<Char>()
         for (i in str.indices) {
@@ -25,4 +25,12 @@ fun twoSum(nums:IntArray, target:Int):IntArray {
         }
         return true
     }
+
+    //capitalize a sentence
+    fun capitalize(str : String){
+
+        val allCaps =str.split(" ,")
+        for (o in allCaps){
+            print(o.uppercase())
+        }
 }
