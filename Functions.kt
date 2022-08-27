@@ -33,4 +33,16 @@ fun twoSum(nums:IntArray, target:Int):IntArray {
         for (o in allCaps){
             print(o.uppercase())
         }
-}
+    }
+
+    //Given a string, return a new string with the reversed order of characters
+    fun reverse(str: String): String {
+        val reversed = StringBuilder()
+        for (i in str.length - 1 downTo 0) {
+            reversed.append(str[i])
+        }
+        val result = reversed.toString()
+        //print(result)
+        return result
+    }
+
