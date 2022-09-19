@@ -1,25 +1,15 @@
+import com.davidodhiambo.kotlinalgosolutions.fibonacci
+import com.davidodhiambo.kotlinalgosolutions.printFibonacci
+import com.davidodhiambo.kotlinalgosolutions.towerOfHanoi
+
 fun main(args: Array<String>) {
-   val  a : String = "#"
-    for(i in 1..6){
-        println(a.repeat(i))
+    val border = "============================================================="
+    printFibonacci(10)
+    println( border)
+    towerOfHanoi(5, "A", "B", "C")
+    //number of moves = 2^n - 1
+    println( border)
 
-        }
-    for (j in 6 downTo 1){
-        println(a.repeat(j))
 
-    }
-/*val n : Int = 6
-    for (i in 1..n){
-        for (j in 1..i){
-            print("#")
-        }
-        println()
-    }
-    for (i in n-1 downTo 1){
-        for (j in 1..i){
-            print("#")
-        }
-        println()
-    }*/
-    println("Program arguments: ${args.joinToString()}")
+
 }

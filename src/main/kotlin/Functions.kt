@@ -416,7 +416,7 @@ fun listIndex(){
 }
 
 //map each letter of an alphabet to 01 to 26
-fun mapAlphabet(){
+fun mapAlphabet(word : String) : List<String>{
     val alphabet = "abcdefghijklmnopqrstuvwxyz"
     val map = mutableMapOf<Char, Int>()
     alphabet.forEachIndexed { index, c ->
@@ -424,12 +424,53 @@ fun mapAlphabet(){
 
     }
     //replace letters in a word with numbers
-    val word = "hello"
+    //val word = "hello"
     val result = word.map { map[it] }
     print(result)//[8, 5, 12, 12, 15]
     //add 0 to single digit numbers
     val result2 = result.map { if(it!! < 10) "0$it" else "$it" }
     print(result2)//[08, 05, 12, 12, 15]
+
+    return result2
+
 }
 
+//tower of hanoi
+fun towerOfHanoi(n : Int, from : String, to : String, aux : String){
+    //base case
+    if(n == 1){
+        println("Move disk 1 from $from to $to")
+        return
+    }
+    //move n-1 disks from to aux
+    towerOfHanoi(n - 1, from, aux, to)//n is the number of disks, from is the source, to is the destination, aux is the auxiliary
+    println("Move disk $n from $from to $to")
+    //move n-1 disks from aux to
+    towerOfHanoi(n - 1, aux, to, from)
 
+    //get the total number of moves
+
+
+}
+
+//stairs problem
+fun stairs(n : Int) : Int{
+    if(n == 1) return 1
+    if(n == 2) return 2
+    return stairs(n - 1) + stairs(n - 2)
+}
+
+//fibonacci
+fun fibonacci(n : Int) : Int{
+    if(n == 1) return 0
+    if(n == 2) return 1
+    return fibonacci(n - 1) + fibonacci(n - 2)
+}
+// print the first 10 fibonacci numbers
+fun printFibonacci(n : Int){
+    println("\nFibonacci numbers of: " + n)
+    for(i in 1..n){
+        print("${fibonacci(i)} ")
+    }
+    println("\n")
+}
