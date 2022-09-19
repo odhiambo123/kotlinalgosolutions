@@ -1,7 +1,5 @@
 package com.davidodhiambo.kotlinalgosolutions
 
-import java.util.*
-
 
 class Functions {
     //Given an array of integers, return indices of the two numbers such that they add up to a specific target.
@@ -416,3 +414,22 @@ fun listIndex(){
     }
     print(map)//{H=[0], e=[1], l=[2, 3, 9], o=[4, 8],  =[5], W=[6], r=[7], d=[10]}
 }
+
+//map each letter of an alphabet to 01 to 26
+fun mapAlphabet(){
+    val alphabet = "abcdefghijklmnopqrstuvwxyz"
+    val map = mutableMapOf<Char, Int>()
+    alphabet.forEachIndexed { index, c ->
+        map[c] = index + 1
+
+    }
+    //replace letters in a word with numbers
+    val word = "hello"
+    val result = word.map { map[it] }
+    print(result)//[8, 5, 12, 12, 15]
+    //add 0 to single digit numbers
+    val result2 = result.map { if(it!! < 10) "0$it" else "$it" }
+    print(result2)//[08, 05, 12, 12, 15]
+}
+
+
